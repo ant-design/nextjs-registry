@@ -1,0 +1,57 @@
+{
+  "name": "@ant-design/nextjs-register",
+  "version": "1.0.0",
+  "description": "Register of Next.js for Ant Design",
+  "keywords": [
+    "react",
+    "nextjs",
+    "antd",
+    "ant-design"
+  ],
+  "license": "MIT",
+  "main": "./lib/index",
+  "module": "./es/index",
+  "files": [
+    "es",
+    "lib"
+  ],
+  "scripts": {
+    "dev": "next dev example/with-app-router",
+    "compile": "father build",
+    "lint": "eslint src/ --ext .ts,.tsx,.jsx,.js,.md",
+    "lint-staged": "lint-staged",
+    "prepare": "husky install",
+    "prepublishOnly": "npm run compile && np --yolo --no-publish",
+    "prettier": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\""
+  },
+  "devDependencies": {
+    "@ant-design/cssinjs": "^1.18.2",
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.18",
+    "@umijs/fabric": "^2.0.8",
+    "antd": "^5.12.5",
+    "eslint": "^7.0.0",
+    "father": "^4.3.7",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "next": "^14.0.4",
+    "np": "^7.0.0",
+    "prettier": "^2.0.5",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "@ant-design/cssinjs": "^1.18.2",
+    "antd": "^5.0.0",
+    "next": "^14.0.0",
+    "react": ">=16.0.0",
+    "react-dom": ">=16.0.0"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,tsx,ts,md,json}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
