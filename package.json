@@ -15,6 +15,14 @@
     "es",
     "lib"
   ],
+  "homepage": "https://github.com/ant-design/nextjs-registry",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ant-design/nextjs-registry.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ant-design/nextjs-registry/issues"
+  },
   "scripts": {
     "dev": "next dev example/with-app-router",
     "compile": "father build",
