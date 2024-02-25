@@ -29,7 +29,7 @@ const AntdRegistry: FC<AntdRegistryProps> = (props) => {
     );
   });
 
-  return <StyleProvider {...props} cache={cache}>{children}</StyleProvider>;
+  return <StyleProvider {...props} cache={cache} />;
 };
 
 export default AntdRegistry;
