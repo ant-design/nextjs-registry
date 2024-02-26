@@ -1,10 +1,12 @@
 'use client';
 
-import React, { FC, ReactNode, useRef, useState } from 'react';
+import React, { FC, useRef, useState } from 'react';
 import { createCache, extractStyle, StyleProvider } from '@ant-design/cssinjs';
 import { useServerInsertedHTML } from 'next/navigation';
 
-const AntdRegistry: FC<{ children: ReactNode }> = ({ children }) => {
+type AntdRegistryProps = Omit<StyleProviderProps, 'cache'>;
+
+const AntdRegistry: FC<AntdRegistryProps> = (props) => {
   const [cache] = useState(() => createCache());
   const inserted = useRef(false);
 
@@ -27,7 +29,7 @@ const AntdRegistry: FC<{ children: ReactNode }> = ({ children }) => {
     );
   });
 
-  return <StyleProvider cache={cache}>{children}</StyleProvider>;
+  return <StyleProvider {...props} cache={cache} />;
 };
 
 export default AntdRegistry;
