@@ -1,7 +1,8 @@
 'use client';
 
-import React, { FC, useRef, useState } from 'react';
+import React, { type FC, useRef, useState } from 'react';
 import { createCache, extractStyle, StyleProvider } from '@ant-design/cssinjs';
+import type { StyleProviderProps } from '@ant-design/cssinjs';
 import { useServerInsertedHTML } from 'next/navigation';
 
 type AntdRegistryProps = Omit<StyleProviderProps, 'cache'>;
