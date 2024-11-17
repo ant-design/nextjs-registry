@@ -52,7 +52,7 @@
   "peerDependencies": {
     "@ant-design/cssinjs": "^1.18.2",
     "antd": "^5.0.0",
-    "next": "^14.0.0||^15.0.0",
+    "next": "^14.0.0 || ^15.0.0",
     "react": ">=16.0.0",
     "react-dom": ">=16.0.0"
   },
