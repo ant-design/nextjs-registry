@@ -9,15 +9,15 @@ type AntdRegistryProps = Omit<StyleProviderProps, 'cache'>;
 
 const AntdRegistry: FC<AntdRegistryProps> = (props) => {
   const [cache] = useState(() => createCache());
-  const inserted = useRef(false);
+  const inserted = useRef('');
 
   useServerInsertedHTML(() => {
     const styleText = extractStyle(cache, { plain: true });
 
-    if (inserted.current) {
+    if (inserted.current === styleText) {
       return null;
     }
-    inserted.current = true;
+    inserted.current = styleText;
 
     return (
       <style
