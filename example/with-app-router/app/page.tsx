@@ -1,7 +1,7 @@
 'use client';
 
-import React, { Suspense } from 'react';
-import { Button, Checkbox, ConfigProvider, Form, Input, Select } from 'antd';
+import React from 'react';
+import { Button, Checkbox, ConfigProvider, Form, Input } from 'antd';
 
 const onFinish = (values: any) => {
   console.log('Success:', values);
