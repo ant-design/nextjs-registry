@@ -22,6 +22,7 @@ function genPromise() {
   if (promise) return promise;
   promise = new Promise((resolve) => {
     setTimeout(() => {
+      promise = null;
       resolve({});
     }, 3 * 1000);
   });

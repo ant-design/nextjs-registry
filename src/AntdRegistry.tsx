@@ -13,6 +13,10 @@ const AntdRegistry: FC<AntdRegistryProps> = (props) => {
   useServerInsertedHTML(() => {
     const styleText = extractStyle(cache, { plain: true, once: true });
 
+    if (styleText.includes('.data-ant-cssinjs-cache-path{content:"";}')) {
+      return null;
+    }
+
     return (
       <style
         id="antd-cssinjs"
