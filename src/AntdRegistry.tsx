@@ -1,23 +1,21 @@
 'use client';
 
-import React, { type FC, useRef, useState } from 'react';
-import { createCache, extractStyle, StyleProvider } from '@ant-design/cssinjs';
+import React, { type FC, useState } from 'react';
 import type { StyleProviderProps } from '@ant-design/cssinjs';
+import { createCache, extractStyle, StyleProvider } from '@ant-design/cssinjs';
 import { useServerInsertedHTML } from 'next/navigation';
 
 type AntdRegistryProps = Omit<StyleProviderProps, 'cache'>;
 
 const AntdRegistry: FC<AntdRegistryProps> = (props) => {
   const [cache] = useState(() => createCache());
-  const inserted = useRef(false);
 
   useServerInsertedHTML(() => {
-    const styleText = extractStyle(cache, { plain: true });
+    const styleText = extractStyle(cache, { plain: true, once: true });
 
-    if (inserted.current) {
+    if (styleText.includes('.data-ant-cssinjs-cache-path{content:"";}')) {
       return null;
     }
-    inserted.current = true;
 
     return (
       <style
