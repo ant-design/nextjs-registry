@@ -36,9 +36,8 @@
     "@ant-design/cssinjs": "^2.0.1",
     "@types/react": "^18.3.27",
     "@types/react-dom": "^18.3.7",
-    "@umijs/fabric": "^2.14.1",
     "antd": "^6.0.0",
-    "eslint": "^7.0.0",
+    "eslint": "^9.0.0",
     "father": "^4.6.8",
     "husky": "^8.0.3",
     "lint-staged": "^13.3.0",
@@ -47,7 +46,8 @@
     "prettier": "^2.8.8",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "@antfu/eslint-config": "^6.2.0"
   },
   "peerDependencies": {
     "@ant-design/cssinjs": ">=1.0.0",
